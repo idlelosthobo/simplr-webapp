@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+
+{% block base_title %}
+{% endblock %}
+
+{% block css_include %}
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+{% endblock %}
+
+{% block base_content %}
+    {{ block.super }}
+    {% block page_content %}
+    {% endblock %}
+{% endblock %}
+
+{% block js_include %}
+    <script src="{% static 'js/page.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,31 @@
+.ui-navigation {
+    background: #111111;
+    width: 60px;
+}
+
+.ui-full {
+    width: 100vw;
+    height: 100vh;
+}
+
+.ui-main {
+    width: calc(100% - 60px);
+}
+
+.ui-game {
+    height: 60vh;
+}
+
+.ui-chat {
+    height: 40vh;
+}
+
+
+.ui-message-input {
+    height: 45px;
+}
+
+/* 13px offset for padding error in bootstrap */
+.ui-message-display {
+    height: calc(40vh - 58px);
+}

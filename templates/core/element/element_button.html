@@ -1,0 +1,16 @@
+<a type="button" class="{{ button_float }}" target="{{ button_target }}" href="{% url button_url %}">
+    <button type="button" class="btn mb-1 {{ button_class }}">
+        {% if button_logo_only %}
+            <span class="{{ button_logo_only }}" data-fa-transform="shrink-3"></span>
+        {% endif %}
+        {% if button_logo_left %}
+            <span class="{{ button_logo_left }} mr-1" data-fa-transform="shrink-3"></span>
+        {% endif %}
+        {% if button_text %}
+            {{ button_text }}
+        {% endif %}
+        {% if button_logo_right %}
+            <span class="{{ button_logo_right }} ml-1" data-fa-transform="shrink-3"></span>
+        {% endif %}
+    </button>
+</a>

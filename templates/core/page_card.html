@@ -1,0 +1,24 @@
+{% extends 'core/page.html' %}
+
+{% block page_content %}
+   <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-4">
+            <div class="card m-3">
+                <div class="card-header bg-100 p-2">
+                  <h5 class="mb-0 p-1">
+                      {% block page_card_header %}
+                      {% endblock %}
+                  </h5>
+                </div>
+                <div class="card-body">
+                    {% block page_card_content %}
+                    {% endblock %}
+                </div>
+                <div class="card-footer text-center">
+                    {% block page_card_footer %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

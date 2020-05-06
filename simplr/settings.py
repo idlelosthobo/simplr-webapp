@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core.apps.CoreConfig',
+    'app.core.apps.CoreConfig',
+    'app.registration.apps.RegistrationConfig'
 ]
 
 MIDDLEWARE = [
@@ -77,11 +78,14 @@ WSGI_APPLICATION = 'simplr.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'development_simplr',
+        'USER': 'simplraccess',
+        'PASSWORD': 'ogxl9fkeyy40rifj',
+        'HOST': 'db-mysql-tor1-30973-do-user-6683175-0.db.ondigitalocean.com',
+        'PORT': '25060',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
