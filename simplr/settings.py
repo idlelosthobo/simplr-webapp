@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app.core.apps.CoreConfig',
-    'app.registration.apps.RegistrationConfig'
+    'app.registration.apps.RegistrationConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+# This is required for collectstatic on the production deployment
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+else:
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+
+# Other Settings
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/character/select/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'

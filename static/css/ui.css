@@ -1,31 +1,55 @@
-.ui-navigation {
-    background: #111111;
-    width: 60px;
-}
-
-.ui-full {
+.ui-top {
+    background: #FF0000;
+    height: 66px;
     width: 100vw;
-    height: 100vh;
 }
 
-.ui-main {
-    width: calc(100% - 60px);
+.ui-left {
+    background: #00FF00;
+    width: 66px;
+    height: calc(100% - 66px);
 }
 
-.ui-game {
-    height: 60vh;
+.ui-right {
+    background: #0000FF;
+    width: calc(100% - 66px);
+    height: calc(100% - 66px);
 }
 
-.ui-chat {
-    height: 40vh;
+.active-search input.form-control[type=text]:focus:not([readonly]) {
+    border-bottom: 4px solid #EF767A;
+    width: calc(100vw - 148px);
 }
 
-
-.ui-message-input {
-    height: 45px;
+.active-search input.form-control[type=text] {
+    width: calc(100vw - 148px);
+    font-size: 1.4em;
 }
 
-/* 13px offset for padding error in bootstrap */
-.ui-message-display {
-    height: calc(40vh - 58px);
+.bg-blue {
+    background: #5AA9E6;
+}
+
+.bg-pink {
+    background: #EF767A;
+}
+
+.bg-teal {
+    background: #00919D;
+}
+
+.bg-yellow {
+    background: #FFE94F;
+}
+
+.bg-purple {
+    background: #6665DF;
+}
+
+.bg-orange {
+    background: #FA8334;
+}
+
+.bg-white {
+    background: #FAFAFA;
 }

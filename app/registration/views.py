@@ -1,6 +1,6 @@
 from app.registration.forms import RegisterForm, UserEditForm
+from app.registration.models import UserProfile
 from django.contrib.auth import authenticate, login
-from app.player.models import Player
 from django.shortcuts import render, redirect, reverse
 
 
@@ -15,8 +15,8 @@ def register(response):
 
             user = authenticate(username=response.POST['username'], password=response.POST['password1'])
 
-            player = Player(user=user)
-            player.save()
+            user_profile = UserProfile(user=user)
+            user_profile.save()
 
             return redirect(reverse('character_select_view'))
 
