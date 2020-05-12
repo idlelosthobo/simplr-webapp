@@ -20,4 +20,6 @@ urlpatterns = [
     path('', include('app.core.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('app.registration.urls')),
+    path('container/', include('app.container.urls')),
+    path('item/', include('app.item.urls')),
 ]

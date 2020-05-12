@@ -1,0 +1,40 @@
+{% extends 'core/page.html' %}
+
+{% block page_content %}
+
+    <div class="row p-0 m-0 w-100">
+        <div class="ui-top bg-teal">
+            <div class="row p-2">
+                <div class="col">
+                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-bars fa-2x fa-fw' button_float='float-left' button_url='home' %}
+                    <form class="md-form mr-2 p-0 active-search float-left">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                    </form>
+                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-cog fa-2x fa-fw' button_float='float-right' button_url='admin:index' button_target='_BLANK' %}
+                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-user fa-2x fa-fw' button_float='float-right' button_url='home' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-0 m-0 h-100">
+        <div class="ui-left bg-teal">
+            <div class="row pl-2 pt-1">
+                <div class="col">
+                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-home fa-2x fa-fw' button_url='container_list_view' %}
+                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-arrow-up fa-2x fa-fw' button_url='home' %}
+                    {% include 'core/element/element_nav_button.html' with button_logo_only='far fa-plus-square fa-2x fa-fw' button_url='container_add_form' %}
+                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-plus fa-2x fa-fw' button_url='home' %}
+                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-expand-arrows-alt fa-2x fa-fw' button_url='home' %}
+                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-comment fa-2x fa-fw' button_url='home' %}
+                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-users fa-2x fa-fw' button_url='home' %}
+                </div>
+            </div>
+        </div>
+
+        <div class="ui-right bg-white p-2">
+            {% block page_full_content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

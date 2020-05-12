@@ -1,0 +1,9 @@
+{% extends 'core/page_full.html' %}
+
+{% block page_full_content %}
+
+    {% for container in container_list %}
+        {% include 'container/card/container_card.html' with container=container  %}
+    {% endfor %}
+
+{% endblock %}

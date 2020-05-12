@@ -1,5 +1,7 @@
 {% extends 'core/page_full.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block page_full_content %}
-    Hello World
+    {% crispy form %}
 {% endblock %}
