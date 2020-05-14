@@ -18,6 +18,15 @@ class Container(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, editable=False)
     date_updated = models.DateTimeField(auto_now=True, editable=False)
 
+    def children_list(self):
+        children_list = Container.objects.filter(parent=self.id)
+        return children_list
+
+    def item_list(self):
+        from app.item.models import Item
+        item_list = Item.objects.filter(container=self.id)
+        return item_list
+
     def __str__(self):
         return self.name
 

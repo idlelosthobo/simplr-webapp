@@ -1,6 +1,6 @@
 from django.urls import path
-from app.core import views
+from app.item import views
 
 urlpatterns = [
-    path('new/', views.home, name='something_home'),
+    path('add/', views.ItemAddFormView.as_view(), name='item_add_form'),
 ]

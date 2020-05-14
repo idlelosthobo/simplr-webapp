@@ -17,13 +17,12 @@
 }
 
 .active-search input.form-control[type=text]:focus:not([readonly]) {
-    border-bottom: 4px solid #EF767A;
+    border-bottom: 2px solid #EF767A;
     width: calc(100vw - 214px);
 }
 
 .active-search input.form-control[type=text] {
     width: calc(100vw - 214px);
-    font-size: 1.4em;
 }
 
 .bg-blue {

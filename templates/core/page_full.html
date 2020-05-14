@@ -6,12 +6,16 @@
         <div class="ui-top bg-teal">
             <div class="row p-2">
                 <div class="col">
-                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-bars fa-2x fa-fw' button_float='float-left' button_url='home' %}
+                    {% url 'home' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-bars fa-2x fa-fw' a_class='float-left' href=the_url %}
                     <form class="md-form mr-2 p-0 active-search float-left">
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                        <input class="form-control py-0" type="text" placeholder="Search" aria-label="Search" />
+                        <span class="px-2 text-light">{{ bread_crumb }}</span>
                     </form>
-                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-cog fa-2x fa-fw' button_float='float-right' button_url='admin:index' button_target='_BLANK' %}
-                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-user fa-2x fa-fw' button_float='float-right' button_url='home' %}
+                    {% url 'admin:index' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-cog fa-2x fa-fw' a_class='float-right' href=the_url target='_BLANK' %}
+                    {% url 'home' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-user fa-2x fa-fw' a_class='float-right' href=the_url %}
                 </div>
             </div>
         </div>
@@ -21,13 +25,24 @@
         <div class="ui-left bg-teal">
             <div class="row pl-2 pt-1">
                 <div class="col">
-                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-home fa-2x fa-fw' button_url='container_list_view' %}
-                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-arrow-up fa-2x fa-fw' button_url='home' %}
-                    {% include 'core/element/element_nav_button.html' with button_logo_only='far fa-plus-square fa-2x fa-fw' button_url='container_add_form' %}
-                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-plus fa-2x fa-fw' button_url='home' %}
-                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-expand-arrows-alt fa-2x fa-fw' button_url='home' %}
-                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-comment fa-2x fa-fw' button_url='home' %}
-                    {% include 'core/element/element_nav_button.html' with button_logo_only='fas fa-users fa-2x fa-fw' button_url='home' %}
+                    {% url 'container_list_view' container_pk=0 as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-home fa-2x fa-fw' href=the_url %}
+                    {% if container.parent is not None %}
+                        {% url 'container_list_view' container_pk=container.parent_id as the_url %}
+                    {% else %}
+                        {% url 'container_list_view' container_pk=0 as the_url %}
+                    {% endif %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-arrow-up fa-2x fa-fw' href=the_url %}
+                    {% url 'container_add_form' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='far fa-plus-square fa-2x fa-fw' href=the_url %}
+                    {% url 'item_add_form' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-plus fa-2x fa-fw' href=the_url %}
+                    {% url 'home' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-expand-arrows-alt fa-2x fa-fw' href=the_url %}
+                    {% url 'home' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-comment fa-2x fa-fw' href=the_url %}
+                    {% url 'home' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-users fa-2x fa-fw' href=the_url %}
                 </div>
             </div>
         </div>
