@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', include('app.core.urls')),
@@ -23,6 +24,11 @@ urlpatterns = [
     path('accounts/', include('app.registration.urls')),
     path('container/', include('app.container.urls')),
     path('item/', include('app.item.urls')),
+]
+
+urlpatterns += [
+    path('404/', TemplateView.as_view(template_name='404.html')),
+    path('500/', TemplateView.as_view(template_name='500.html')),
 ]
 
 if settings.DEBUG:

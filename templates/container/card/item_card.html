@@ -1,0 +1,5 @@
+{% extends 'core/card/card.html' %}
+
+{% block card_content %}
+    <a href="{% url 'item_edit_form' container_pk=item.container_id pk=item.pk %}">{{ item.name }}</a>
+{% endblock %}

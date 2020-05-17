@@ -16,6 +16,25 @@
     height: calc(100% - 66px);
 }
 
+@media only screen and (min-width: 768px) {
+
+    .ui-top {
+        height: 66px;
+        width: 100vw;
+    }
+
+    .ui-left {
+        width: 66px;
+        height: calc(100% - 66px);
+    }
+
+    .ui-right {
+        width: calc(100% - 66px);
+        height: calc(100% - 66px);
+    }
+
+}
+
 .active-search input.form-control[type=text]:focus:not([readonly]) {
     border-bottom: 2px solid #EF767A;
     width: calc(100vw - 214px);

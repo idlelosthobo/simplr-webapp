@@ -1,0 +1,22 @@
+            <div class="row pl-2 pt-1">
+                <div class="col">
+                    {% url 'container_list_view' container_pk=0 as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-home fa-2x fa-fw' href=the_url %}
+                    {% if container.parent is not None %}
+                        {% url 'container_list_view' container_pk=container.parent_id as the_url %}
+                    {% else %}
+                        {% url 'container_list_view' container_pk=0 as the_url %}
+                    {% endif %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-arrow-up fa-2x fa-fw' href=the_url %}
+                    {% url 'container_add_form' container_pk=container_pk as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='far fa-plus-square fa-2x fa-fw' href=the_url %}
+                    {% url 'item_add_form' container_pk=container_pk as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-plus fa-2x fa-fw' href=the_url %}
+                    {% url 'home' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-expand-arrows-alt fa-2x fa-fw' href=the_url %}
+                    {% url 'home' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-comment fa-2x fa-fw' href=the_url %}
+                    {% url 'home' as the_url %}
+                    {% include 'core/element/element_nav_button.html' with logo_only='fas fa-users fa-2x fa-fw' href=the_url %}
+                </div>
+            </div>

@@ -1,0 +1,2 @@
+{% url 'container_list_view' container_pk=item.container_id as the_url %}
+{% include 'core/search/element/element_search_result.html' with href=the_url label=item.name logo=item.item_type.font_awesome_logo %}

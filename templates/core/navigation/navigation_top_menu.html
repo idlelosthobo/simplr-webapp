@@ -1,0 +1,14 @@
+<div class="row p-2">
+    <div class="col">
+        {% url 'home' as the_url %}
+        {% include 'core/element/element_nav_button.html' with logo_only='fas fa-bars fa-2x fa-fw' a_class='float-left' href=the_url %}
+        <form class="md-form mr-2 p-0 active-search float-left" action="{% url 'search' %}" method="get">
+            <input class="form-control py-0" name="query" type="text" placeholder="Search" aria-label="Search"/>
+            <span class="px-2 text-light">{{ bread_crumb }}</span>
+        </form>
+        {% url 'admin:index' as the_url %}
+        {% include 'core/element/element_nav_button.html' with logo_only='fas fa-cog fa-2x fa-fw' a_class='float-right' href=the_url target='_BLANK' %}
+        {% url 'home' as the_url %}
+        {% include 'core/element/element_nav_button.html' with logo_only='fas fa-user fa-2x fa-fw' a_class='float-right' href=the_url %}
+    </div>
+</div>

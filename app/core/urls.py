@@ -5,4 +5,5 @@ from app.core import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('search/', views.SearchListView.as_view(), name='search'),
 ]

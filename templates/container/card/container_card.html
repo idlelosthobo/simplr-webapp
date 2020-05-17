@@ -9,6 +9,6 @@
         <a href="{% url 'container_list_view' container_pk=children.pk %}">{{ children.name }}</a><br />
     {% endfor %}
     {% for item in container.item_list %}
-        {{ item.name }}<br />
+        <a href="{% url 'item_edit_form' container_pk=container.parent_id pk=item.pk %}">{{ item.name }}</a><br />
     {% endfor %}
 {% endblock %}

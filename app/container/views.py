@@ -1,7 +1,7 @@
 from django.shortcuts import render, reverse
 from django.views import generic
-from app.container import models
-from app.container import forms
+from app.container import models, forms
+from app.item.models import Item
 
 
 class ContainerListView(generic.TemplateView):
@@ -25,6 +25,7 @@ class ContainerListView(generic.TemplateView):
                 container = models.Container.objects.get(pk=self.kwargs['container_pk'])
                 context['container'] = container
                 context['container_list'] = models.Container.objects.filter(parent_id=self.kwargs['container_pk'])
+                context['item_list'] = Item.objects.filter(container_id=self.kwargs['container_pk'])
                 if container.parent:
                     context['bread_crumb'] = container.parent.name + ' > ' + container.name
                 else:
@@ -43,6 +44,13 @@ class ContainerAddFormView(generic.CreateView):
     model = models.Container
     form_class = forms.ContainerAddForm
     template_name = 'core/page_form.html'
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        if self.kwargs['container_pk'] != 0:
+            form.instance.parent_id = self.kwargs['container_pk']
+        return super(ContainerAddFormView, self).form_valid(form)
+
 
     def get_success_url(self):
         return reverse('container_list_view', kwargs={'container_pk':0})

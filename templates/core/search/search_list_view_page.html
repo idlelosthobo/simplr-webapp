@@ -3,11 +3,11 @@
 {% block page_full_content %}
 
     {% for container in container_list %}
-        {% include 'container/card/container_card.html' with container=container  %}
+        {% include 'core/search/element/element_search_container.html' with container=container %}
     {% endfor %}
 
     {% for item in item_list %}
-        {% include 'container/card/item_card.html' with item=item  %}
+        {% include 'core/search/element/element_search_item.html' with item=item %}
     {% endfor %}
 
 {% endblock %}

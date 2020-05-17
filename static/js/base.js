@@ -1,2 +1,1 @@
 Vue.mixin({ delimiters: ['{|','|}'] });
-
