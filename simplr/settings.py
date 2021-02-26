@@ -89,12 +89,8 @@ WSGI_APPLICATION = 'simplr.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'development_simplr',
-        'USER': 'simplraccess',
-        'PASSWORD': 'ogxl9fkeyy40rifj',
-        'HOST': 'db-mysql-tor1-30973-do-user-6683175-0.db.ondigitalocean.com',
-        'PORT': '25060',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 
